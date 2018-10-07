@@ -158,17 +158,17 @@ namespace Tile_Maniac___RSDKv5_Collision_Editor
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Title = "Open RSDKv5 Tileconfig...";
+            dlg.Title = "Open RSDKv5 TileConfig";
             dlg.DefaultExt = ".bin";
-            dlg.Filter = "RSDKv5 Tileconfig Files (TileConfig.bin)|TileConfig.bin";
+            dlg.Filter = "RSDKv5 TileConfig Files |*TileConfig*.bin|All Files|*";
 
             if (dlg.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
             {
-                curColisionMask = 0; //Set the current collision mask to zero (avoids rare errors)
+                curColisionMask = 0; // Set the current collision mask to zero (avoids rare errors)
                 filepath = dlg.FileName;
                 tcf = new RSDKv5.TilesConfig(dlg.FileName);
-                string t = filepath.Replace("TileConfig.bin", "16x16tiles.gif"); //get the path to the stage's tileset
-                LoadTileSet(new Bitmap(t)); //load each 16x16 tile into the list
+                string tileBitmapPath = Path.Combine(Path.GetDirectoryName(filepath), "16x16tiles.gif"); // get the path to the stage's tileset
+                LoadTileSet(new Bitmap(tileBitmapPath)); // load each 16x16 tile into the list
 
                 CollisionList.Images.Clear();
 
@@ -309,9 +309,9 @@ namespace Tile_Maniac___RSDKv5_Collision_Editor
                  {
                      CollisionPicBox.Image = tcf.CollisionPath1[curColisionMask].DrawCMask(Color.FromArgb(0, 0, 0, 0), Color.FromArgb(255, 0, 255, 0));
                      Overlaypic = tcf.CollisionPath1[curColisionMask].DrawCMask(Color.FromArgb(255, 0, 0, 0), Color.FromArgb(255, 0, 255, 0), Tiles[curColisionMask]);
-                    degreeLabel.Text = "Degree of Slope (Experimental): " + ((int)((256 - tcf.CollisionPath1[curColisionMask].slopeAngle) * (360f / 0x100))).ToString();
-                    SlopeNUD.Value = tcf.CollisionPath1[curColisionMask].slopeAngle;
-                    PhysicsNUD.Value = tcf.CollisionPath1[curColisionMask].physics;
+                     degreeLabel.Text = "Degree of Slope (Experimental): " + ((int)((256 - tcf.CollisionPath1[curColisionMask].slopeAngle) * (360f / 0x100))).ToString();
+                     SlopeNUD.Value = tcf.CollisionPath1[curColisionMask].slopeAngle;
+                     PhysicsNUD.Value = tcf.CollisionPath1[curColisionMask].physics;
                      MomentumNUD.Value = tcf.CollisionPath1[curColisionMask].momentum;
                      UnknownNUD.Value = tcf.CollisionPath1[curColisionMask].unknown;
                      //SpecialNUD.Value = tcf.CollisionPath1[curColisionMask].special;
@@ -471,9 +471,9 @@ namespace Tile_Maniac___RSDKv5_Collision_Editor
                  if (showPathB) //if we are showing Path B then refresh the values accordingly
                  {
                      CollisionPicBox.Image = tcf.CollisionPath2[curColisionMask].DrawCMask(Color.FromArgb(0, 0, 0, 0), Color.FromArgb(0, 255, 0)); Overlaypic = tcf.CollisionPath2[curColisionMask].DrawCMask(Color.FromArgb(255, 0, 0, 0), Color.FromArgb(255, 0, 255, 0), Tiles[curColisionMask]); 
-                    SlopeNUD.Value = tcf.CollisionPath1[curColisionMask].slopeAngle;
-                    degreeLabel.Text = "Degree of Slope (Experimental): " + ((int)((256 - tcf.CollisionPath2[curColisionMask].slopeAngle) * (360f / 0xFF))).ToString();
-                    PhysicsNUD.Value = tcf.CollisionPath2[curColisionMask].physics;
+                     SlopeNUD.Value = tcf.CollisionPath1[curColisionMask].slopeAngle;
+                     degreeLabel.Text = "Degree of Slope (Experimental): " + ((int)((256 - tcf.CollisionPath2[curColisionMask].slopeAngle) * (360f / 0xFF))).ToString();
+                     PhysicsNUD.Value = tcf.CollisionPath2[curColisionMask].physics;
                      MomentumNUD.Value = tcf.CollisionPath2[curColisionMask].momentum;
                      UnknownNUD.Value = tcf.CollisionPath2[curColisionMask].unknown;
                     //SpecialNUD.Value = tcf.CollisionPath2[curColisionMask].special;
@@ -671,24 +671,6 @@ namespace Tile_Maniac___RSDKv5_Collision_Editor
                  showPathB = showPathBToolStripMenuItem.Checked = false;
                  VPLabel.Text = "Currently Viewing: Path A";
                  RefreshUI();
-             }
-         }
-
-         private void openUncompressedToolStripMenuItem_Click(object sender, EventArgs e)
-         {
-             OpenFileDialog dlg = new OpenFileDialog();
-             dlg.Title = "Open Uncompressed";
-             dlg.DefaultExt = ".bin";
-             dlg.Filter = "Uncompressed RSDKv5 Tileconfig Files (TileConfig.bin)|*.bin";
-
-             if (dlg.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
-             {
-                 curColisionMask = 0; //Make sure we start at Collision Mask 0
-                 filepath = dlg.FileName; //Set the filepath
-                 tcf = new RSDKv5.TilesConfig(dlg.FileName); //Tell it to read an uncompressed tileconfig
-                 string t = filepath.Replace("TileConfig.bin", "16x16tiles.gif"); //get the path to the stage's tileset
-                 LoadTileSet(new Bitmap(t)); //load each 16x16 tile into the list
-                 RefreshUI(); //update the UI
              }
          }
 

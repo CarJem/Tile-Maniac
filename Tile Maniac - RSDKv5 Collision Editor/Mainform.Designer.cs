@@ -32,7 +32,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openUpcompressedMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -107,6 +106,7 @@
             this.GotoNUD = new System.Windows.Forms.NumericUpDown();
             this.PrevButton = new System.Windows.Forms.Button();
             this.NextButton = new System.Windows.Forms.Button();
+            this.degreeLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tileViewRadioButton = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -154,7 +154,6 @@
             this.RGBox5 = new System.Windows.Forms.PictureBox();
             this.RGBox3 = new System.Windows.Forms.PictureBox();
             this.RGBox4 = new System.Windows.Forms.PictureBox();
-            this.degreeLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -229,7 +228,6 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openToolStripMenuItem,
-            this.openUpcompressedMenuItem,
             this.saveToolStripMenuItem,
             this.saveAsToolStripMenuItem,
             this.toolStripSeparator2,
@@ -243,48 +241,48 @@
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(308, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
-            // 
-            // openUpcompressedMenuItem
-            // 
-            this.openUpcompressedMenuItem.Name = "openUpcompressedMenuItem";
-            this.openUpcompressedMenuItem.Size = new System.Drawing.Size(213, 22);
-            this.openUpcompressedMenuItem.Text = "Open (Uncompressed)";
-            this.openUpcompressedMenuItem.Click += new System.EventHandler(this.openUncompressedToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(308, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.saveAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.S)));
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(308, 22);
             this.saveAsToolStripMenuItem.Text = "Save As...";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(210, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(305, 6);
             // 
             // importRSDKv5TileConfigToolStripMenuItem
             // 
             this.importRSDKv5TileConfigToolStripMenuItem.Name = "importRSDKv5TileConfigToolStripMenuItem";
-            this.importRSDKv5TileConfigToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.importRSDKv5TileConfigToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+            | System.Windows.Forms.Keys.S)));
+            this.importRSDKv5TileConfigToolStripMenuItem.Size = new System.Drawing.Size(308, 22);
             this.importRSDKv5TileConfigToolStripMenuItem.Text = "Save (Uncompressed)";
             this.importRSDKv5TileConfigToolStripMenuItem.Click += new System.EventHandler(this.saveUncompressedToolStripMenuItem_Click);
             // 
             // exportToRSDKv5TileConfigToolStripMenuItem
             // 
             this.exportToRSDKv5TileConfigToolStripMenuItem.Name = "exportToRSDKv5TileConfigToolStripMenuItem";
-            this.exportToRSDKv5TileConfigToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.exportToRSDKv5TileConfigToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+            | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.S)));
+            this.exportToRSDKv5TileConfigToolStripMenuItem.Size = new System.Drawing.Size(308, 22);
             this.exportToRSDKv5TileConfigToolStripMenuItem.Text = "Save As... (Uncompressed)";
             this.exportToRSDKv5TileConfigToolStripMenuItem.Click += new System.EventHandler(this.saveAsUncompressedToolStripMenuItem_Click);
             // 
@@ -305,14 +303,16 @@
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             this.copyToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+C";
             this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
             this.copyToolStripMenuItem.Text = "Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
             // copyToOtherPathToolStripMenuItem1
             // 
             this.copyToOtherPathToolStripMenuItem1.Name = "copyToOtherPathToolStripMenuItem1";
-            this.copyToOtherPathToolStripMenuItem1.Size = new System.Drawing.Size(174, 22);
+            this.copyToOtherPathToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.C)));
+            this.copyToOtherPathToolStripMenuItem1.Size = new System.Drawing.Size(248, 22);
             this.copyToOtherPathToolStripMenuItem1.Text = "Copy to other Path";
             this.copyToOtherPathToolStripMenuItem1.Click += new System.EventHandler(this.copyToOtherPathToolStripMenuItem_Click);
             // 
@@ -321,19 +321,19 @@
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             this.pasteToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+V";
             this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
             this.pasteToolStripMenuItem.Text = "Paste";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(171, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(245, 6);
             // 
             // mirrorPathsToolStripMenuItem1
             // 
             this.mirrorPathsToolStripMenuItem1.Name = "mirrorPathsToolStripMenuItem1";
-            this.mirrorPathsToolStripMenuItem1.Size = new System.Drawing.Size(174, 22);
+            this.mirrorPathsToolStripMenuItem1.Size = new System.Drawing.Size(248, 22);
             this.mirrorPathsToolStripMenuItem1.Text = "Mirror Paths";
             this.mirrorPathsToolStripMenuItem1.Click += new System.EventHandler(this.mirrorPathsToolStripMenuItem_Click);
             // 
@@ -389,7 +389,7 @@
             // aboutToolStripMenuItem1
             // 
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem1.Text = "About";
             this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
             // 
@@ -1340,6 +1340,17 @@
             this.NextButton.UseVisualStyleBackColor = true;
             this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
             // 
+            // degreeLabel
+            // 
+            this.degreeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.degreeLabel.AutoSize = true;
+            this.degreeLabel.Location = new System.Drawing.Point(6, 397);
+            this.degreeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.degreeLabel.Name = "degreeLabel";
+            this.degreeLabel.Size = new System.Drawing.Size(165, 13);
+            this.degreeLabel.TabIndex = 112;
+            this.degreeLabel.Text = "Degree of Slope (Experimental): 0";
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.tileViewRadioButton);
@@ -1830,17 +1841,6 @@
             this.RGBox4.TabIndex = 57;
             this.RGBox4.TabStop = false;
             // 
-            // degreeLabel
-            // 
-            this.degreeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.degreeLabel.AutoSize = true;
-            this.degreeLabel.Location = new System.Drawing.Point(6, 397);
-            this.degreeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.degreeLabel.Name = "degreeLabel";
-            this.degreeLabel.Size = new System.Drawing.Size(165, 13);
-            this.degreeLabel.TabIndex = 112;
-            this.degreeLabel.Text = "Degree of Slope (Experimental): 0";
-            // 
             // Mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2036,7 +2036,6 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.GroupBox groupBox2;
         private PictureBoxNearestNeighbor overlayPicBox;
-        private System.Windows.Forms.ToolStripMenuItem openUpcompressedMenuItem;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
