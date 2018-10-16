@@ -37,10 +37,10 @@ namespace Tile_Maniac___RSDKv5_Collision_Editor.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool ListSetting {
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int ListSetting {
             get {
-                return ((bool)(this["ListSetting"]));
+                return ((int)(this["ListSetting"]));
             }
             set {
                 this["ListSetting"] = value;

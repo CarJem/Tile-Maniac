@@ -5,8 +5,8 @@
     <Setting Name="ViewerSetting" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="ListSetting" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+    <Setting Name="ListSetting" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="ScrollAllowed" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

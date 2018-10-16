@@ -47,7 +47,6 @@
             this.showPathBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.refreshCollisionTexturesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -332,6 +331,7 @@
             // 
             // mirrorPathsToolStripMenuItem1
             // 
+            this.mirrorPathsToolStripMenuItem1.Enabled = false;
             this.mirrorPathsToolStripMenuItem1.Name = "mirrorPathsToolStripMenuItem1";
             this.mirrorPathsToolStripMenuItem1.Size = new System.Drawing.Size(248, 22);
             this.mirrorPathsToolStripMenuItem1.Text = "Mirror Paths";
@@ -356,8 +356,7 @@
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.splitFileToolStripMenuItem,
-            this.refreshCollisionTexturesToolStripMenuItem});
+            this.splitFileToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
@@ -365,17 +364,11 @@
             // 
             // splitFileToolStripMenuItem
             // 
+            this.splitFileToolStripMenuItem.Enabled = false;
             this.splitFileToolStripMenuItem.Name = "splitFileToolStripMenuItem";
-            this.splitFileToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.splitFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.splitFileToolStripMenuItem.Text = "Split File";
             this.splitFileToolStripMenuItem.Click += new System.EventHandler(this.splitFileToolStripMenuItem_Click);
-            // 
-            // refreshCollisionTexturesToolStripMenuItem
-            // 
-            this.refreshCollisionTexturesToolStripMenuItem.Name = "refreshCollisionTexturesToolStripMenuItem";
-            this.refreshCollisionTexturesToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.refreshCollisionTexturesToolStripMenuItem.Text = "Refresh Collision/Textures";
-            this.refreshCollisionTexturesToolStripMenuItem.Click += new System.EventHandler(this.refreshCollisionTexturesToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -2028,7 +2021,6 @@
         private System.Windows.Forms.ToolStripMenuItem exportToRSDKv5TileConfigToolStripMenuItem;
         private System.Windows.Forms.CheckBox ICBox;
         private System.Windows.Forms.Label ICLabel;
-        private System.Windows.Forms.ToolStripMenuItem refreshCollisionTexturesToolStripMenuItem;
         private PictureBoxNearestNeighbor TilePicBox;
         private PictureBoxNearestNeighbor CollisionPicBox;
         private System.Windows.Forms.RadioButton radioButton3;
